@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OJASVA Dashboard</title>
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ===================================== -->
+<!-- SIDEBAR -->
+<!-- ===================================== -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-bolt"></i>
+
+        <span>OJASVA</span>
+
+    </div>
+
+    <ul>
+
+        <li class="active">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            Dashboard
+
+        </li>
+
+        <li>
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            Analytics
+
+        </li>
+
+        <li>
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            Recommendations
+
+        </li>
+
+        <li>
+
+            <i class="fa-solid fa-bolt"></i>
+
+            Energy Usage
+
+        </li>
+
+        <li>
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ===================================== -->
+<!-- MAIN CONTENT -->
+<!-- ===================================== -->
+
+<main class="main">
+
+<!-- ===================================== -->
+<!-- NAVBAR -->
+<!-- ===================================== -->
+
+<header class="topbar">
+
+<div>
+
+<h1>
+
+Energy Intelligence Dashboard
+
+</h1>
+
+<p>
+
+AI Powered Electricity Monitoring
+
+</p>
+
+</div>
+
+<div class="top-icons">
+
+<button id="themeToggle">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<i class="fa-solid fa-bell"></i>
+
+<img src="https://ui-avatars.com/api/?name=User" alt="User">
+
+</div>
+
+</header>
+
+<!-- ===================================== -->
+<!-- KPI CARDS -->
+<!-- ===================================== -->
+
+<section class="cards">
+
+<div class="card">
+
+<div>
+
+<p>Total Energy</p>
+
+<h2 id="energy">
+
+2.84
+
+</h2>
+
+<span>kWh</span>
+
+</div>
+
+<i class="fa-solid fa-bolt"></i>
+
+</div>
+
+<div class="card">
+
+<div>
+
+<p>Today's Cost</p>
+
+<h2 id="cost">
+
+₹14.56
+
+</h2>
+
+</div>
+
+<i class="fa-solid fa-wallet"></i>
+
+</div>
+
+<div class="card">
+
+<div>
+
+<p>Monthly Bill</p>
+
+<h2 id="bill">
+
+₹438
+
+</h2>
+
+</div>
+
+<i class="fa-solid fa-file-invoice-dollar"></i>
+
+</div>
+
+<div class="card">
+
+<div>
+
+<p>Status</p>
+
+<h2 id="status">
+
+Normal
+
+</h2>
+
+</div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- ENERGY OVERVIEW -->
+<!-- ===================================== -->
+
+<section class="energy-overview">
+
+    <div class="overview-card">
+
+        <div class="overview-header">
+
+            <h2>⚡ Today's Energy Overview</h2>
+
+            <span class="live-status">● Live</span>
+
+        </div>
+
+        <div class="overview-grid">
+
+            <div class="overview-item">
+
+                <h3>Total Consumption</h3>
+
+                <h1>2.84 kWh</h1>
+
+            </div>
+
+            <div class="overview-item">
+
+                <h3>Today's Cost</h3>
+
+                <h1>₹14.56</h1>
+
+            </div>
+
+            <div class="overview-item">
+
+                <h3>Efficiency Score</h3>
+
+                <h1>92%</h1>
+
+            </div>
+
+            <div class="overview-item">
+
+                <h3>Carbon Emission</h3>
+
+                <h1>1.8 kg CO₂</h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="ai-card">
+
+        <h2>
+
+            🤖 AI Insights
+
+        </h2>
+
+        <ul>
+
+            <li>
+
+                Refrigerator is operating efficiently.
+
+            </li>
+
+            <li>
+
+                AC consumed 13% more electricity than yesterday.
+
+            </li>
+
+            <li>
+
+                Using appliances after 10 PM may reduce electricity cost.
+
+            </li>
+
+            <li>
+
+                Overall household energy efficiency is above average.
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- ENERGY ANALYTICS -->
+<!-- ===================================== -->
+
+<section class="charts">
+
+    <div class="chart-box">
+
+        <div class="chart-header">
+
+            <h3>Appliance Distribution</h3>
+
+            <span>Today</span>
+
+        </div>
+
+        <canvas id="pieChart"></canvas>
+
+    </div>
+
+    <div class="chart-box">
+
+        <div class="chart-header">
+
+            <h3>24-Hour Energy Usage</h3>
+
+            <span>Live</span>
+
+        </div>
+
+        <canvas id="lineChart"></canvas>
+
+    </div>
+
+    <div class="chart-box">
+
+        <div class="chart-header">
+
+            <h3>Peak Usage Timeline</h3>
+
+            <span>Hourly</span>
+
+        </div>
+
+        <canvas id="barChart"></canvas>
+
+    </div>
+
+    <div class="chart-box">
+
+        <div class="chart-header">
+
+            <h3>Top Energy Consumers</h3>
+
+            <span>Appliances</span>
+
+        </div>
+
+        <canvas id="horizontalChart"></canvas>
+
+    </div>
+
+</section>
+<!-- ===================================== -->
+<!-- RANKING -->
+<!-- ===================================== -->
+
+<section class="ranking">
+
+<div class="panel">
+
+<h3>
+
+Top Energy Consuming Appliances
+
+</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Appliance</th>
+
+<th>Consumption</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Refrigerator</td>
+
+<td>1.82 kWh</td>
+
+</tr>
+
+<tr>
+
+<td>Air Conditioner</td>
+
+<td>1.21 kWh</td>
+
+</tr>
+
+<tr>
+
+<td>Fan</td>
+
+<td>0.62 kWh</td>
+
+</tr>
+
+<tr>
+
+<td>TV</td>
+
+<td>0.38 kWh</td>
+
+</tr>
+
+<tr>
+
+<td>Lights</td>
+
+<td>0.22 kWh</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="panel">
+
+<h3>
+
+Bill Prediction
+
+</h3>
+
+<div class="bill-box">
+
+<h1>
+
+₹438
+
+</h1>
+
+<p>
+
+Estimated Monthly Electricity Bill
+
+</p>
+
+<div class="progress">
+
+<div class="progress-bar"></div>
+
+</div>
+
+<p>
+
+8% lower than last month
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================================== -->
+<!-- AI RECOMMENDATION + ANOMALY -->
+<!-- ===================================== -->
+
+<section class="insights">
+
+    <div class="panel recommendation">
+
+        <h3>
+
+            <i class="fa-solid fa-robot"></i>
+
+            AI Recommendations
+
+        </h3>
+
+        <div class="recommendation-list">
+
+            <div class="recommendation-card">
+
+                <i class="fa-solid fa-snowflake"></i>
+
+                <div>
+
+                    <h4>Refrigerator</h4>
+
+                    <p>
+
+                        Refrigerator is operating efficiently.
+                        Continue current usage.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="recommendation-card">
+
+                <i class="fa-solid fa-fan"></i>
+
+                <div>
+
+                    <h4>Fan</h4>
+
+                    <p>
+
+                        Fan usage increased by 8%.
+                        Turn it off when not required.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="recommendation-card">
+
+                <i class="fa-solid fa-temperature-high"></i>
+
+                <div>
+
+                    <h4>Air Conditioner</h4>
+
+                    <p>
+
+                        Set AC temperature to 24°C to save electricity.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="recommendation-card">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                <div>
+
+                    <h4>Lighting</h4>
+
+                    <p>
+
+                        Switch to LED bulbs for better efficiency.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="panel anomaly">
+
+        <h3>
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            Anomaly Detection
+
+        </h3>
+
+        <div class="anomaly-card normal">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <div>
+
+                <h4>Status</h4>
+
+                <p>
+
+                    No abnormal energy consumption detected.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="anomaly-card warning">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <div>
+
+                <h4>Energy Spike</h4>
+
+                <p>
+
+                    AC usage increased significantly during evening hours.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================== -->
+<!-- MONTH COMPARISON -->
+<!-- ===================================== -->
+
+<section class="comparison">
+
+    <div class="panel">
+
+        <h3>
+
+            Current Month vs Last Month
+
+        </h3>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Appliance</th>
+
+                    <th>Current</th>
+
+                    <th>Last</th>
+
+                    <th>Change</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>Refrigerator</td>
+
+                    <td>120 kWh</td>
+
+                    <td>108 kWh</td>
+
+                    <td class="increase">
+
+                        ▲ 11%
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Air Conditioner</td>
+
+                    <td>248 kWh</td>
+
+                    <td>220 kWh</td>
+
+                    <td class="increase">
+
+                        ▲ 13%
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Fan</td>
+
+                    <td>34 kWh</td>
+
+                    <td>39 kWh</td>
+
+                    <td class="decrease">
+
+                        ▼ 13%
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Television</td>
+
+                    <td>18 kWh</td>
+
+                    <td>20 kWh</td>
+
+                    <td class="decrease">
+
+                        ▼ 10%
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Lights</td>
+
+                    <td>11 kWh</td>
+
+                    <td>12 kWh</td>
+
+                    <td class="decrease">
+
+                        ▼ 8%
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================== -->
+<!-- FOOTER -->
+<!-- ===================================== -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 OJASVA — AI Powered Energy Intelligence Platform
+
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+
+
+<!-- ===================================== -->
+<!-- CHART JS -->
+<!-- ===================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/charts.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

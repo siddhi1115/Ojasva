@@ -1,0 +1,1189 @@
+/* ======================================================
+   GOOGLE FONT
+====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ======================================================
+   ROOT VARIABLES
+====================================================== */
+
+:root{
+
+    --primary:#10B981;
+    --secondary:#2563EB;
+
+    --bg:#F4F7FC;
+    --sidebar:#111827;
+
+    --card:#FFFFFF;
+
+    --text:#1F2937;
+    --light:#6B7280;
+
+    --radius:18px;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* ======================================================
+   RESET
+====================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+}
+
+/* ======================================================
+   DASHBOARD LAYOUT
+====================================================== */
+
+.dashboard{
+
+    min-height:100vh;
+
+}
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+
+.sidebar{
+
+    background:var(--sidebar);
+
+    color:white;
+
+    padding:35px 25px;
+
+    position:fixed;
+
+    width:270px;
+
+    height:100vh;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#10B981;
+
+    margin-bottom:50px;
+
+}
+
+.logo i{
+
+    font-size:30px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 18px;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.sidebar li:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.sidebar li.active{
+
+    background:linear-gradient(135deg,#10B981,#2563EB);
+
+}
+
+.sidebar li i{
+
+    width:22px;
+
+    text-align:center;
+
+}
+
+/* ======================================================
+   MAIN
+====================================================== */
+
+.main{
+    margin-left:270px;
+    width:calc(100% - 270px);
+    min-height:100vh;
+    padding:32px;
+    overflow-x:hidden;
+}
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h1{
+
+    font-size:34px;
+
+}
+
+.topbar p{
+
+    color:var(--light);
+
+}
+
+.top-icons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+}
+
+.top-icons button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:white;
+
+    box-shadow:var(--shadow);
+
+}
+
+.top-icons i{
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
+
+.top-icons img{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+}
+
+/* ======================================================
+   KPI CARDS
+====================================================== */
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+    margin-bottom:32px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+
+.card h2{
+
+    font-size:34px;
+
+    margin:10px 0;
+
+}
+
+.card p{
+
+    color:var(--light);
+
+}
+
+.card span{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.card i{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#10B981,#2563EB);
+
+    color:white;
+
+    font-size:28px;
+
+}
+
+/* ======================================================
+   CHART AREA
+====================================================== */
+.charts{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+    margin-bottom:32px;
+}
+
+.chart-box{
+    background:#fff;
+    border-radius:20px;
+    padding:28px;
+    box-shadow:var(--shadow);
+    transition:.35s;
+    min-height:420px;
+}
+
+.chart-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.chart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.chart-header h3{
+    font-size:20px;
+    font-weight:600;
+}
+
+.chart-header span{
+    background:#DCFCE7;
+    color:#16A34A;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.chart-box canvas{
+    width:100% !important;
+    height:320px !important;
+}
+
+/* ======================================================
+   RANKING + BILL SECTION
+====================================================== */
+
+.ranking{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:24px;
+    margin-bottom:32px;
+    align-items:stretch;
+}
+
+.panel{
+    background:var(--card);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:var(--shadow);
+    transition:.35s;
+    height:100%;
+}
+
+.panel:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.panel h3{
+
+    font-size:22px;
+
+    margin-bottom:25px;
+
+    font-weight:600;
+
+}
+
+/* ======================================================
+   TABLE
+====================================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#F3F4F6;
+
+}
+
+th{
+
+    padding:16px;
+
+    text-align:left;
+
+    color:var(--text);
+
+    font-weight:600;
+
+}
+
+td{
+
+    padding:18px 16px;
+
+    border-bottom:1px solid #E5E7EB;
+
+    color:var(--light);
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#F9FAFB;
+
+    cursor:pointer;
+
+}
+
+tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+/* ======================================================
+   BILL CARD
+====================================================== */
+
+.bill-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100%;
+
+}
+
+.bill-box h1{
+
+    font-size:60px;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.bill-box p{
+
+    color:var(--light);
+
+    text-align:center;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:14px;
+
+    background:#E5E7EB;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin:30px 0;
+
+}
+
+.progress-bar{
+
+    width:72%;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:linear-gradient(90deg,#10B981,#2563EB);
+
+    animation:loading 2s ease;
+
+}
+
+@keyframes loading{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:72%;
+
+    }
+
+}
+
+/* ======================================================
+   INSIGHTS
+====================================================== */
+
+.insights{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+/* ======================================================
+   RECOMMENDATION PANEL
+====================================================== */
+
+.recommendation-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.recommendation-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    background:#F8FAFC;
+
+    border-left:5px solid var(--primary);
+
+    border-radius:16px;
+
+    padding:20px;
+
+    transition:.3s;
+
+}
+
+.recommendation-card:hover{
+
+    transform:translateX(8px);
+
+}
+
+.recommendation-card i{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#10B981,#2563EB);
+
+    color:white;
+
+    font-size:22px;
+
+}
+
+.recommendation-card h4{
+
+    margin-bottom:6px;
+
+}
+
+.recommendation-card p{
+
+    color:var(--light);
+
+    line-height:1.7;
+
+}
+
+/* ======================================================
+   ANOMALY
+====================================================== */
+
+.anomaly{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.anomaly-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    border-radius:18px;
+
+    padding:22px;
+
+}
+
+.anomaly-card i{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    color:white;
+
+    font-size:22px;
+
+}
+
+.normal{
+
+    background:#ECFDF5;
+
+}
+
+.normal i{
+
+    background:#10B981;
+
+}
+
+.warning{
+
+    background:#FFF7ED;
+
+}
+
+.warning i{
+
+    background:#F59E0B;
+
+}
+
+.anomaly-card h4{
+
+    margin-bottom:5px;
+
+}
+
+.anomaly-card p{
+
+    color:var(--light);
+
+}
+/* ======================================================
+   MONTH COMPARISON
+====================================================== */
+.comparison{
+    margin:35px 0;
+}
+
+.comparison .panel{
+    overflow-x:auto;
+}
+
+.comparison table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:700px;
+}
+
+.comparison thead{
+    background:#EEF2FF;
+}
+
+.comparison th{
+    padding:18px;
+    text-align:left;
+    font-size:15px;
+    font-weight:600;
+    color:#374151;
+}
+
+.comparison td{
+    padding:18px;
+    border-bottom:1px solid #E5E7EB;
+    vertical-align:middle;
+}
+
+.comparison tbody tr{
+    transition:.3s;
+}
+
+.comparison tbody tr:hover{
+    background:#F8FAFC;
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.dashboard-footer{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    color:var(--light);
+
+    margin-top:20px;
+
+}
+
+/* ======================================================
+   HOVER EFFECTS
+====================================================== */
+
+.card,
+.panel,
+.summary-card,
+.chart-box{
+
+    transition:.35s;
+
+}
+
+.card:hover,
+.panel:hover,
+.chart-box:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+/* ======================================================
+   DARK MODE
+====================================================== */
+
+body.dark{
+
+    --bg:#0F172A;
+    --card:#1E293B;
+    --sidebar:#020617;
+    --text:#F8FAFC;
+    --light:#CBD5E1;
+
+}
+
+body.dark .card,
+body.dark .panel,
+body.dark .chart-box,
+body.dark .summary-card,
+body.dark .dashboard-footer{
+
+    background:#1E293B;
+
+    color:white;
+
+}
+
+body.dark table thead{
+
+    background:#334155;
+
+}
+
+body.dark tbody tr:hover{
+
+    background:#273449;
+
+}
+
+body.dark td{
+
+    border-color:#334155;
+
+}
+
+body.dark .recommendation-card{
+
+    background:#334155;
+
+}
+
+body.dark .normal{
+
+    background:#123524;
+
+}
+
+body.dark .warning{
+
+    background:#3A2A12;
+
+}
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(#10B981,#2563EB);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#E5E7EB;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:1200px){
+
+.cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.charts,
+.ranking,
+.insights{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:900px){
+
+.dashboard{
+
+    grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+.main{
+
+    margin-left:0;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.top-icons{
+
+    width:100%;
+
+    justify-content:space-between;
+
+}
+
+.chart-box canvas{
+
+    height:260px !important;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.main{
+
+    padding:20px;
+
+}
+
+.logo{
+
+    font-size:24px;
+
+}
+
+.topbar h1{
+
+    font-size:28px;
+
+}
+
+.panel{
+
+    padding:20px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+.bill-box h1{
+
+    font-size:45px;
+
+}
+}
+
+/* ======================================================
+   ANIMATIONS
+====================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.card,
+.chart-box,
+.panel{
+    animation:fadeUp .8s ease both;
+
+}
+
+/* =======================================
+   ENERGY OVERVIEW
+======================================= */
+
+.energy-overview{
+    display:grid;
+    grid-template-columns:2.3fr 1fr;
+    gap:24px;
+    align-items:stretch;
+    margin-bottom:32px;
+}
+
+.overview-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.overview-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.live-status{
+
+    background:#DCFCE7;
+
+    color:#16A34A;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+}
+
+.overview-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.overview-item{
+
+    background:#F8FAFC;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    transition:.3s;
+
+}
+
+.overview-item:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.overview-item h3{
+
+    color:gray;
+
+    margin-bottom:10px;
+
+}
+
+.overview-item h1{
+
+    font-size:34px;
+
+    color:#10B981;
+
+}
+
+/* =======================================
+   AI CARD
+======================================= */
+
+.ai-card{
+    background:linear-gradient(135deg,#10B981,#2563EB);
+    color:#fff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:var(--shadow);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    min-height:100%;
+}
+
+.ai-card h2{
+    font-size:24px;
+    margin-bottom:24px;
+    font-weight:600;
+}
+
+.ai-card ul{
+    list-style:none;
+}
+
+.ai-card li{
+    position:relative;
+    padding-left:30px;
+    margin-bottom:18px;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.ai-card li::before{
+    content:"✔";
+    position:absolute;
+    left:0;
+    top:2px;
+    font-weight:bold;
+    color:#fff;
+}
